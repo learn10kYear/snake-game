@@ -60,8 +60,8 @@ class Food():
         x, y = random.randint(0, self.game.numCellx-1), random.randint(0, self.game.numCelly-1)
 
         # if x,y is snake head or tail, just ignore it
-        # while self.game.snake.is_position_find_in_head_or_tail(x, y):
-        #     x, y = random.randint(0, self.game.numCellx-1), random.randint(0, self.game.numCelly-1)
+        while self.game.snake.is_position_find_in_head_or_tail(x, y):
+            x, y = random.randint(0, self.game.numCellx-1), random.randint(0, self.game.numCelly-1)
 
         self.position['x'] = x
         self.position['y'] = y
