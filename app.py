@@ -100,6 +100,15 @@ class Snake():
             rect = pygame.Rect(x * CELL_WIDTH, y * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH)
             pygame.draw.rect(self.game.screen, Color.DARK_GREEN.value, rect)
 
+    def is_position_find_in_head_or_tail(self, foodX, foodY):
+        """Check if new food position is clashed with the snake head or tail"""
+        if self.head['x']==foodX and self.head['y']==foodY:
+            return True
+        for x, y in self.tail:
+            if foodX == x and foodY==y:
+                return True
+        return False
+
     def is_head_collide_with_wall(self):
         """Check if snake head is collide with wall"""
 
